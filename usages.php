@@ -9,12 +9,12 @@ function requireClass($classe){
 }
 
 // création de $billet1
-$billet1 = new Billet(["titre", "contenu");
+$billet1 = new Billet("titre", "contenu");
 var_dump($billet1);
 
 $bdd = new PDO('mysql:host=localhost;dbname=Billetsmiguel;charset=utf8', 'Vg','toto', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-$pm = new BilletManager($bdd);
-var_dump($pm->getList());
+$bm = new BilletManager($bdd);
+var_dump($bm->getList());
 
 ?>
