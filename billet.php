@@ -4,9 +4,9 @@
 //Création d'une class Billet
 class Billet
 {
-    private string $id = ''; // L'id du billet
-    private string $titre = ''; // Le titre du billet
-    private string $contenu = ''; // Le contenu du billet 
+    protected int $id = 0;   // L'id du billet
+    protected string $titre = ''; // Le titre du billet
+    protected string $contenu = ''; // Le contenu du billet 
     
     public function hydrate(array $donnees) {
         foreach ($donnees as $key => $value) {
@@ -21,6 +21,14 @@ class Billet
         }
     }
 
+    public function getInfo() {
+        return $this->titre;
+    }
+
+    public function affiche() {
+        var_dump($this);
+     }
+     
     public function __construct($tab) {
         $this->hydrate($tab);
         var_dump($tab);

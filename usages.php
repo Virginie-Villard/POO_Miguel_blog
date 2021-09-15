@@ -17,4 +17,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=blog_miguel;charset=utf8', 'Vg','tot
 $bm = new BilletManager($bdd);
 var_dump($bm->getList());
 
+$premium = new BilletPro(["titre"=>"mon premier billet", "contenu"=>"j'aime php"]);
+$premium->affiche();
 ?>
