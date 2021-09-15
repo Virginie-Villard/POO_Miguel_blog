@@ -9,10 +9,10 @@ function requireClass($classe){
 }
 
 // création de $billet1
-$billet1 = new Billet("titre", "contenu");
+$billet1 = new Billet(["titre"=>"mon premier billet", "contenu"=>"j'aime php"]);
 var_dump($billet1);
 
-$bdd = new PDO('mysql:host=localhost;dbname=Billetsmiguel;charset=utf8', 'Vg','toto', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$bdd = new PDO('mysql:host=localhost;dbname=blog_miguel;charset=utf8', 'Vg','toto', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 $bm = new BilletManager($bdd);
 var_dump($bm->getList());
